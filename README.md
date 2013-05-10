@@ -1,4 +1,4 @@
-TOLEQSlider
+LARSBar
 ===========
 
 A `UISlider` subclass mimicking the awesome EQ slider found on Twitter's #music app. Named like this because my friends kept calling it this - and I really can't come up with anything better.
