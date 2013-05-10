@@ -1,6 +1,6 @@
 //
-//  TOLEQSlider.h
-//  TOLEQSliderDemo
+//  LARSBar.h
+//  LARSBarDemo
 //
 //  Created by Lars Anderson on 4/23/13.
 //  Copyright (c) 2013 theonlylars. All rights reserved.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TOLEQSlider : UISlider
+@interface LARSBar : UISlider
 
 /** The value for the left channel eq in the range of 0 to 1.
  

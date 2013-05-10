@@ -346,7 +346,7 @@
 					<reference ref="466955552"/>
 					<reference ref="437971682"/>
 				</array>
-				<string key="8.CustomClassName">TOLEQSlider</string>
+				<string key="8.CustomClassName">LARSBar</string>
 				<string key="8.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<boolean value="NO" key="8.IBViewMetadataTranslatesAutoresizingMaskIntoConstraints"/>
 				<string key="9.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -360,6 +360,14 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
+					<string key="className">LARSBar</string>
+					<string key="superclassName">UISlider</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/LARSBar.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">NSLayoutConstraint</string>
 					<string key="superclassName">NSObject</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -368,25 +376,17 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
-					<string key="className">TOLEQSlider</string>
-					<string key="superclassName">UISlider</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/TOLEQSlider.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
 					<string key="className">TOLViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="eqSlider">TOLEQSlider</string>
+						<string key="eqSlider">LARSBar</string>
 						<string key="frameHeightConstraint">NSLayoutConstraint</string>
 						<string key="sliderFrame">UIImageView</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="eqSlider">
 							<string key="name">eqSlider</string>
-							<string key="candidateClassName">TOLEQSlider</string>
+							<string key="candidateClassName">LARSBar</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="frameHeightConstraint">
 							<string key="name">frameHeightConstraint</string>

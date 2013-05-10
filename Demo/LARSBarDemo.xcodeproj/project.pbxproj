@@ -11,6 +11,7 @@
 		461037361730B87200251028 /* Novocaine.m in Sources */ = {isa = PBXBuildFile; fileRef = 461037351730B87200251028 /* Novocaine.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		461037381730B8B300251028 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461037371730B8B300251028 /* AudioToolbox.framework */; };
 		4610373A1730B8BD00251028 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 461037391730B8BD00251028 /* Accelerate.framework */; };
+		467BAB45173D3CCB0050B3B7 /* LARSBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 467BAB44173D3CCB0050B3B7 /* LARSBar.m */; };
 		4695089F17277F4300118E00 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4695089E17277F4300118E00 /* UIKit.framework */; };
 		469508A117277F4300118E00 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469508A017277F4300118E00 /* Foundation.framework */; };
 		469508A317277F4300118E00 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 469508A217277F4300118E00 /* CoreGraphics.framework */; };
@@ -24,7 +25,6 @@
 		469508BB17277F4300118E00 /* TOLViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 469508B917277F4300118E00 /* TOLViewController.xib */; };
 		46DA8A671734978900D4D292 /* eq-slider-border@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46DA8A661734978900D4D292 /* eq-slider-border@2x.png */; };
 		46EC87371734A4D800ABF923 /* slider-knob@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 46EC87361734A4D800ABF923 /* slider-knob@2x.png */; };
-		46EC873B1734AFCB00ABF923 /* TOLEQSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 46EC873A1734AFCB00ABF923 /* TOLEQSlider.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,14 +33,16 @@
 		461037351730B87200251028 /* Novocaine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Novocaine.m; sourceTree = "<group>"; };
 		461037371730B8B300251028 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		461037391730B8BD00251028 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		4695089B17277F4300118E00 /* TOLEQSliderDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TOLEQSliderDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		467BAB43173D3CCB0050B3B7 /* LARSBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LARSBar.h; sourceTree = "<group>"; };
+		467BAB44173D3CCB0050B3B7 /* LARSBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LARSBar.m; sourceTree = "<group>"; };
+		4695089B17277F4300118E00 /* LARSBarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LARSBarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4695089E17277F4300118E00 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		469508A017277F4300118E00 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		469508A217277F4300118E00 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		469508A617277F4300118E00 /* TOLEQSliderDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TOLEQSliderDemo-Info.plist"; sourceTree = "<group>"; };
+		469508A617277F4300118E00 /* LARSBarDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LARSBarDemo-Info.plist"; sourceTree = "<group>"; };
 		469508A817277F4300118E00 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		469508AA17277F4300118E00 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		469508AC17277F4300118E00 /* TOLEQSliderDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TOLEQSliderDemo-Prefix.pch"; sourceTree = "<group>"; };
+		469508AC17277F4300118E00 /* LARSBarDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LARSBarDemo-Prefix.pch"; sourceTree = "<group>"; };
 		469508AD17277F4300118E00 /* TOLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TOLAppDelegate.h; sourceTree = "<group>"; };
 		469508AE17277F4300118E00 /* TOLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TOLAppDelegate.m; sourceTree = "<group>"; };
 		469508B017277F4300118E00 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
@@ -51,8 +53,6 @@
 		469508BA17277F4300118E00 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/TOLViewController.xib; sourceTree = "<group>"; };
 		46DA8A661734978900D4D292 /* eq-slider-border@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "eq-slider-border@2x.png"; sourceTree = "<group>"; };
 		46EC87361734A4D800ABF923 /* slider-knob@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "slider-knob@2x.png"; sourceTree = "<group>"; };
-		46EC87391734AFCB00ABF923 /* TOLEQSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TOLEQSlider.h; sourceTree = "<group>"; };
-		46EC873A1734AFCB00ABF923 /* TOLEQSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TOLEQSlider.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,13 +82,23 @@
 			path = Vendor/Novocaine;
 			sourceTree = "<group>";
 		};
+		467BAB42173D3CCB0050B3B7 /* LARSBar */ = {
+			isa = PBXGroup;
+			children = (
+				467BAB43173D3CCB0050B3B7 /* LARSBar.h */,
+				467BAB44173D3CCB0050B3B7 /* LARSBar.m */,
+			);
+			name = LARSBar;
+			path = ../LARSBar;
+			sourceTree = "<group>";
+		};
 		4695089217277F4300118E00 = {
 			isa = PBXGroup;
 			children = (
-				46EC87381734AFCB00ABF923 /* TOLEQSlider */,
+				467BAB42173D3CCB0050B3B7 /* LARSBar */,
 				46DA8A651734978900D4D292 /* Assets */,
 				461037331730B87200251028 /* Novocaine */,
-				469508A417277F4300118E00 /* TOLEQSliderDemo */,
+				469508A417277F4300118E00 /* LARSBarDemo */,
 				4695089D17277F4300118E00 /* Frameworks */,
 				4695089C17277F4300118E00 /* Products */,
 			);
@@ -97,7 +107,7 @@
 		4695089C17277F4300118E00 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4695089B17277F4300118E00 /* TOLEQSliderDemo.app */,
+				4695089B17277F4300118E00 /* LARSBarDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -115,7 +125,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		469508A417277F4300118E00 /* TOLEQSliderDemo */ = {
+		469508A417277F4300118E00 /* LARSBarDemo */ = {
 			isa = PBXGroup;
 			children = (
 				469508AD17277F4300118E00 /* TOLAppDelegate.h */,
@@ -125,16 +135,16 @@
 				469508B917277F4300118E00 /* TOLViewController.xib */,
 				469508A517277F4300118E00 /* Supporting Files */,
 			);
-			path = TOLEQSliderDemo;
+			path = LARSBarDemo;
 			sourceTree = "<group>";
 		};
 		469508A517277F4300118E00 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				469508A617277F4300118E00 /* TOLEQSliderDemo-Info.plist */,
+				469508A617277F4300118E00 /* LARSBarDemo-Info.plist */,
 				469508A717277F4300118E00 /* InfoPlist.strings */,
 				469508AA17277F4300118E00 /* main.m */,
-				469508AC17277F4300118E00 /* TOLEQSliderDemo-Prefix.pch */,
+				469508AC17277F4300118E00 /* LARSBarDemo-Prefix.pch */,
 				469508B017277F4300118E00 /* Default.png */,
 				469508B217277F4300118E00 /* Default@2x.png */,
 				469508B417277F4300118E00 /* Default-568h@2x.png */,
@@ -151,22 +161,12 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
-		46EC87381734AFCB00ABF923 /* TOLEQSlider */ = {
-			isa = PBXGroup;
-			children = (
-				46EC87391734AFCB00ABF923 /* TOLEQSlider.h */,
-				46EC873A1734AFCB00ABF923 /* TOLEQSlider.m */,
-			);
-			name = TOLEQSlider;
-			path = ../TOLEQSlider;
-			sourceTree = SOURCE_ROOT;
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4695089A17277F4300118E00 /* TOLEQSliderDemo */ = {
+		4695089A17277F4300118E00 /* LARSBarDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 469508BE17277F4400118E00 /* Build configuration list for PBXNativeTarget "TOLEQSliderDemo" */;
+			buildConfigurationList = 469508BE17277F4400118E00 /* Build configuration list for PBXNativeTarget "LARSBarDemo" */;
 			buildPhases = (
 				4695089717277F4300118E00 /* Sources */,
 				4695089817277F4300118E00 /* Frameworks */,
@@ -176,9 +176,9 @@
 			);
 			dependencies = (
 			);
-			name = TOLEQSliderDemo;
-			productName = TOLEQSliderDemo;
-			productReference = 4695089B17277F4300118E00 /* TOLEQSliderDemo.app */;
+			name = LARSBarDemo;
+			productName = LARSBarDemo;
+			productReference = 4695089B17277F4300118E00 /* LARSBarDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -191,7 +191,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = theonlylars;
 			};
-			buildConfigurationList = 4695089617277F4300118E00 /* Build configuration list for PBXProject "TOLEQSliderDemo" */;
+			buildConfigurationList = 4695089617277F4300118E00 /* Build configuration list for PBXProject "LARSBarDemo" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -203,7 +203,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4695089A17277F4300118E00 /* TOLEQSliderDemo */,
+				4695089A17277F4300118E00 /* LARSBarDemo */,
 			);
 		};
 /* End PBXProject section */
@@ -234,7 +234,7 @@
 				469508AF17277F4300118E00 /* TOLAppDelegate.m in Sources */,
 				469508B817277F4300118E00 /* TOLViewController.m in Sources */,
 				461037361730B87200251028 /* Novocaine.m in Sources */,
-				46EC873B1734AFCB00ABF923 /* TOLEQSlider.m in Sources */,
+				467BAB45173D3CCB0050B3B7 /* LARSBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,10 +319,12 @@
 		469508BF17277F4400118E00 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TOLEQSliderDemo/TOLEQSliderDemo-Prefix.pch";
-				INFOPLIST_FILE = "TOLEQSliderDemo/TOLEQSliderDemo-Info.plist";
+				GCC_PREFIX_HEADER = "LARSBarDemo/LARSBarDemo-Prefix.pch";
+				INFOPLIST_FILE = "LARSBarDemo/LARSBarDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -335,10 +337,12 @@
 		469508C017277F4400118E00 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TOLEQSliderDemo/TOLEQSliderDemo-Prefix.pch";
-				INFOPLIST_FILE = "TOLEQSliderDemo/TOLEQSliderDemo-Info.plist";
+				GCC_PREFIX_HEADER = "LARSBarDemo/LARSBarDemo-Prefix.pch";
+				INFOPLIST_FILE = "LARSBarDemo/LARSBarDemo-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WARNING_CFLAGS = (
 					"-Wextra",
 					"-Wall",
@@ -351,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4695089617277F4300118E00 /* Build configuration list for PBXProject "TOLEQSliderDemo" */ = {
+		4695089617277F4300118E00 /* Build configuration list for PBXProject "LARSBarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				469508BC17277F4400118E00 /* Debug */,
@@ -360,7 +364,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		469508BE17277F4400118E00 /* Build configuration list for PBXNativeTarget "TOLEQSliderDemo" */ = {
+		469508BE17277F4400118E00 /* Build configuration list for PBXNativeTarget "LARSBarDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				469508BF17277F4400118E00 /* Debug */,

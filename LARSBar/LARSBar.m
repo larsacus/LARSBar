@@ -1,12 +1,12 @@
 //
-//  TOLEQSlider.m
-//  TOLEQSliderDemo
+//  LARSBar.m
+//  LARSBarDemo
 //
 //  Created by Lars Anderson on 4/23/13.
 //  Copyright (c) 2013 theonlylars. All rights reserved.
 //
 
-#import "TOLEQSlider.h"
+#import "LARSBar.h"
 #import <QuartzCore/CALayer.h>
 
 const CGSize TOLLightLayerSize = {10.f, 12.f};
@@ -22,12 +22,12 @@ const CGFloat TOLTargetLightPadding = -3.f;
 
 @end
 
-@interface TOLEQSlider ()
+@interface LARSBar ()
 @property (nonatomic, strong) NSMutableArray *leftChannelLightLayers;
 @property (nonatomic, strong) NSMutableArray *rightChannelLightLayers;
 @end
 
-@implementation TOLEQSlider
+@implementation LARSBar
 
 - (instancetype)awakeAfterUsingCoder:(NSCoder *)aDecoder{
     

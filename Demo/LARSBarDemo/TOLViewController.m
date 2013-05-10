@@ -1,13 +1,13 @@
 //
 //  TOLViewController.m
-//  TOLEQSliderDemo
+//  LARSBarDemo
 //
 //  Created by Lars Anderson on 4/23/13.
 //  Copyright (c) 2013 theonlylars. All rights reserved.
 //
 
 #import "TOLViewController.h"
-#import "TOLEQSlider.h"
+#import "LARSBar.h"
 #import "Novocaine.h"
 
 @interface TOLViewController ()

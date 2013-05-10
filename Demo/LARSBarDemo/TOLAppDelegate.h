@@ -1,6 +1,6 @@
 //
 //  TOLAppDelegate.h
-//  TOLEQSliderDemo
+//  LARSBarDemo
 //
 //  Created by Lars Anderson on 4/23/13.
 //  Copyright (c) 2013 theonlylars. All rights reserved.
