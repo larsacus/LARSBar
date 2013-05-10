@@ -1,12 +1,12 @@
 TOLEQSlider
 ===========
 
-A `UISlider` subclass that mimics the EQ slider found on Twitter's #music app.
+A `UISlider` subclass mimicking the awesome EQ slider found on Twitter's #music app. Named like this because my friends kept calling it this - and I really can't come up with anything better.
 
 You'll need to bring your own assets for the frame, track and slider thumb, or just use the ones I've created in the sample project - I don't care. I've included the PSD files.
 
 Excuse the crummy gif screen capture quality, the performance is quite good:  
-![TOLEQSlider in action](Demo/Assets/toleqdemo.gif)
+![LARSBar in action](Demo/Assets/toleqdemo.gif)
 
 ##Interface
 Pretty simple interface:
@@ -43,7 +43,7 @@ In addition to all of the above, since this is just a `UISlider` subclass, you c
 MIT License. Go nuts.
 
 ##Homepage
-If you're not on github right now reading this, you can find the page here: https://github.com/larsacus/TOLEQSlider
+If you're not on github right now reading this, you can find the page here: https://github.com/larsacus/LARSBar
 
 ##Other
 Demo project uses [Novocaine](https://github.com/alexbw/novocaine) for audio input. Other than that - have fun.
