@@ -5,7 +5,7 @@ A `UISlider` subclass mimicking the awesome EQ slider found on Twitter's #music 
 
 You'll need to bring your own assets for the frame, track and slider thumb, or just use the ones I've created in the sample project - I don't care. I've included the PSD files.
 
-Excuse the crummy gif screen capture quality, the performance is quite good:  
+Excuse the crummy gif screen capture quality, the performance is quite good and there are no gaps in the animation:  
 ![LARSBar in action](Demo/Assets/toleqdemo.gif)
 
 ##Interface
