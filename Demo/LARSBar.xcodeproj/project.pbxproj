@@ -191,7 +191,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = theonlylars;
 			};
-			buildConfigurationList = 4695089617277F4300118E00 /* Build configuration list for PBXProject "LARSBarDemo" */;
+			buildConfigurationList = 4695089617277F4300118E00 /* Build configuration list for PBXProject "LARSBar" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -355,7 +355,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4695089617277F4300118E00 /* Build configuration list for PBXProject "LARSBarDemo" */ = {
+		4695089617277F4300118E00 /* Build configuration list for PBXProject "LARSBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				469508BC17277F4400118E00 /* Debug */,
