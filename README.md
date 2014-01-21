@@ -51,3 +51,7 @@ Demo project uses [Novocaine](https://github.com/alexbw/novocaine) for audio inp
 Yours truly,
 
 _Lars_ ([@theonlylars](http://twitter.com/theonlylars))
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/larsacus/larsbar/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
