@@ -7,7 +7,7 @@
 //
 
 #import "LARSBar.h"
-#import <QuartzCore/CALayer.h>
+#import <QuartzCore/QuartzCore.h>
 
 const CGSize TOLLightLayerSize = {10.f, 12.f};
 const CGFloat TOLTargetLightPadding = -3.f;
@@ -15,7 +15,7 @@ const CGFloat TOLTargetLightPadding = -3.f;
 @interface TOLEQLight : CALayer
 
 @property (nonatomic, assign, getter = isActive) BOOL active;
-@property (nonatomic, assign) BOOL lightState;
+@property (nonatomic, assign) CGFloat lightState;
 @property (nonatomic, strong) UIColor *glowColor;
 @property (nonatomic, strong) UIColor *inactiveColor;
 @property (nonatomic, strong) UIColor *activeColor;
@@ -263,17 +263,61 @@ const CGFloat TOLTargetLightPadding = -3.f;
 
 @implementation TOLEQLight
 
+@dynamic lightState;
+
 - (instancetype)init{
     self = [super init];
     if (self) {
         self.activeColor = [UIColor colorWithRed: 0.376 green: 0.4 blue: 0.416 alpha: 1];
         self.inactiveColor = [UIColor colorWithRed:0.09 green:0.09 blue:0.09 alpha:1.0];
         self.glowColor = [UIColor yellowColor];
-        self.lightState = YES;
+        self.lightState = 1.f;
         self.active = YES;
         self.contentsScale = [[UIScreen mainScreen] scale];
+//        self.drawsAsynchronously = YES; // Unsure how this might affect app performance, disabling
     }
     return self;
+}
+
+- (instancetype)initWithLayer:(id)layer {
+    self = [super initWithLayer:layer];
+    if (self) {
+        if ([layer isKindOfClass:[TOLEQLight class]]) {
+            TOLEQLight *lightLayer = (TOLEQLight *)layer;
+            
+            self.activeColor = lightLayer.activeColor;
+            self.inactiveColor = lightLayer.inactiveColor;
+            self.glowColor = lightLayer.glowColor;
+            self.lightState = lightLayer.lightState;
+            self.active = lightLayer.isActive;
+            self.contentsScale = lightLayer.contentsScale;
+        }
+    }
+    return self;
+}
+
++ (BOOL)needsDisplayForKey:(NSString *)key {
+    if ([key isEqualToString:NSStringFromSelector(@selector(lightState))]) {
+        return YES;
+    }
+    
+    return [super needsDisplayForKey:key];
+}
+
+- (id<CAAction>)actionForKey:(NSString *)event {
+    
+    if ([event isEqualToString:NSStringFromSelector(@selector(lightState))]) {
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeyPath:event];
+        NSValue *fromValue = [self.presentationLayer valueForKey:event];
+        
+        anim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
+        anim.duration = 0.10;
+        anim.fromValue = fromValue;
+        
+        return anim;
+    }
+    
+    return [super actionForKey:event];
 }
 
 - (void)drawInContext:(CGContextRef)ctx{
@@ -293,13 +337,11 @@ const CGFloat TOLTargetLightPadding = -3.f;
     
     CGFloat scale = [[UIScreen mainScreen] scale];
     
-    //// General Declarations
-    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
     CGContextRef context = ctx;
     
     //// Color Declarations
     UIColor* activeOffFill = nil;
-    if (self.lightState) {
+    if (self.lightState >= 1.f) {
         activeOffFill = self.glowColor;
     }
     else if(self.isActive){
@@ -308,24 +350,18 @@ const CGFloat TOLTargetLightPadding = -3.f;
     else{
         activeOffFill = self.inactiveColor;
     }
+    
     UIColor* strokeColor = [UIColor colorWithRed: 0.094 green: 0.102 blue: 0.102 alpha: 1];
     UIColor* underStrokeColor = [UIColor colorWithRed: 0.224 green: 0.227 blue: 0.231 alpha: 1];
     UIColor* lightGlowColor = [self.glowColor colorWithAlphaComponent:0.9f];
     UIColor* clearColor = [UIColor clearColor];
     
-    //// Gradient Declarations
-    NSArray* lightGlowGradientColors = [NSArray arrayWithObjects:
-                                        (id)lightGlowColor.CGColor,
-                                        (id)clearColor.CGColor, nil];
-    CGFloat lightGlowGradientLocations[] = {0.f, 1.f};
-    CGGradientRef lightGlowGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)lightGlowGradientColors, lightGlowGradientLocations);
-        
     //// Shadow Declarations
     UIColor* underStroke = underStrokeColor;
     CGSize underStrokeOffset = CGSizeMake(0.f, 1.f/scale);
     CGFloat underStrokeBlurRadius = 0;
     
-    //// Light Frame Drawing
+    //// Frame Drawing
     UIBezierPath* lightFramePath = [UIBezierPath bezierPathWithOvalInRect:lightRect];
     CGContextSaveGState(context);
     CGContextSetShadowWithColor(context, underStrokeOffset, underStrokeBlurRadius, underStroke.CGColor);
@@ -337,18 +373,27 @@ const CGFloat TOLTargetLightPadding = -3.f;
     lightFramePath.lineWidth = 1.f/scale;
     [lightFramePath stroke];
     
-    //// Light Glow Drawing
+    //// Glow Drawing
     
-    CGFloat endRadius = self.lightState ? MAX(floorf(width/2.f), floorf(height/2.f)) : 0.f;
+    CGFloat endRadius = self.lightState * MAX(floorf(width/2.f), floorf(height/2.f));
 
-    CGContextDrawRadialGradient(context, lightGlowGradient,
-                                CGPointMake(width/2.f, height/2.f), 0.f,
-                                CGPointMake(width/2.f, height/2.f), endRadius,
-                                kCGGradientDrawsBeforeStartLocation);
-    
-    //// Cleanup
-    CGGradientRelease(lightGlowGradient);
-    CGColorSpaceRelease(colorSpace);
+    if (self.lightState > 0.f) {
+        //// Gradient Declarations
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        NSArray* lightGlowGradientColors = [NSArray arrayWithObjects:
+                                            (id)lightGlowColor.CGColor,
+                                            (id)clearColor.CGColor, nil];
+        CGFloat lightGlowGradientLocations[] = {0.f, 1.f};
+        CGGradientRef lightGlowGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)lightGlowGradientColors, lightGlowGradientLocations);
+        CGContextDrawRadialGradient(context, lightGlowGradient,
+                                    CGPointMake(width/2.f, height/2.f - (1 - 1/scale)), 0.f,
+                                    CGPointMake(width/2.f, height/2.f - (1 - 1/scale)), endRadius,
+                                    kCGGradientDrawsBeforeStartLocation);
+        
+        //// Cleanup
+        CGGradientRelease(lightGlowGradient);
+        CGColorSpaceRelease(colorSpace);
+    }
 }
 
 @end
