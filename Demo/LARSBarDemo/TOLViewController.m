@@ -42,11 +42,11 @@
     // ==================================================
     __block CGFloat dbVal = 0.0f;
     typeof(self) __weak weakSelf = self;
-    [self.audioManager setInputBlock:^(CGFloat *data, UInt32 numFrames, UInt32 numChannels) {
+    [self.audioManager setInputBlock:^(float *data, UInt32 numFrames, UInt32 numChannels) {
         vDSP_vsq(data, 1, data, 1, numFrames*numChannels);
-        CGFloat meanVal = 0.0f;
+        float meanVal = 0.0f;
         vDSP_meanv(data, 1, &meanVal, numFrames*numChannels);
-        CGFloat one = 1.0;
+        float one = 1.0;
         vDSP_vdbcon(&meanVal, 1, &one, &meanVal, 1, 1, 0);
         dbVal = dbVal + 0.2f*(meanVal - dbVal);
         if (isnan(dbVal)) {
