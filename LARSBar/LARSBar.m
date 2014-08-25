@@ -269,7 +269,7 @@ const CGFloat TOLTargetLightPadding = -3.f;
     self = [super init];
     if (self) {
         self.activeColor = [UIColor colorWithRed: 0.376 green: 0.4 blue: 0.416 alpha: 1];
-        self.inactiveColor = [UIColor colorWithRed:0.09 green:0.09 blue:0.09 alpha:1.0];
+        self.inactiveColor = [UIColor colorWithRed:0.19 green:0.19 blue:0.19 alpha:0.8];
         self.glowColor = [UIColor yellowColor];
         self.lightState = 1.f;
         self.active = YES;
@@ -340,50 +340,58 @@ const CGFloat TOLTargetLightPadding = -3.f;
     CGContextRef context = ctx;
     
     //// Color Declarations
-    UIColor* activeOffFill = nil;
-    if (self.lightState >= 1.f) {
-        activeOffFill = self.glowColor;
-    }
-    else if(self.isActive){
-        activeOffFill = self.activeColor;
+    UIColor* baseFillColor = nil;
+    
+    if(self.isActive){
+        baseFillColor = self.activeColor;
     }
     else{
-        activeOffFill = self.inactiveColor;
+        baseFillColor = self.inactiveColor;
     }
     
-    UIColor* strokeColor = [UIColor colorWithRed: 0.094 green: 0.102 blue: 0.102 alpha: 1];
-    UIColor* underStrokeColor = [UIColor colorWithRed: 0.224 green: 0.227 blue: 0.231 alpha: 1];
-    UIColor* lightGlowColor = [self.glowColor colorWithAlphaComponent:0.9f];
-    UIColor* clearColor = [UIColor clearColor];
-    
-    //// Shadow Declarations
-    UIColor* underStroke = underStrokeColor;
-    CGSize underStrokeOffset = CGSizeMake(0.f, 1.f/scale);
-    CGFloat underStrokeBlurRadius = 0;
-    
-    //// Frame Drawing
+    // Base Frame Drawing
     UIBezierPath* lightFramePath = [UIBezierPath bezierPathWithOvalInRect:lightRect];
     CGContextSaveGState(context);
-    CGContextSetShadowWithColor(context, underStrokeOffset, underStrokeBlurRadius, underStroke.CGColor);
-    [activeOffFill setFill];
+    [baseFillColor setFill];
     [lightFramePath fill];
     CGContextRestoreGState(context);
+    
+    UIColor* strokeColor = [UIColor colorWithRed: 0.094 green: 0.102 blue: 0.102 alpha: 0.8];
+    UIColor* underStrokeColor = [UIColor colorWithRed: 0.224 green: 0.227 blue: 0.231 alpha: 1];
+    UIColor* clearColor = [UIColor clearColor];
+    
+    // Active Color Drawing
+    if (self.lightState > 0.f) {
+        UIColor *activeFillColor = [self.glowColor colorWithAlphaComponent:self.lightState];
+        
+        //// Shadow Declarations
+        UIColor* underStroke = underStrokeColor;
+        CGSize underStrokeOffset = CGSizeMake(0.f, 1.f/scale);
+        CGFloat underStrokeBlurRadius = 0;
+        
+        CGContextSaveGState(context);
+        CGContextSetShadowWithColor(context, underStrokeOffset, underStrokeBlurRadius, underStroke.CGColor);
+        [activeFillColor setFill];
+        [lightFramePath fill];
+        
+        CGContextRestoreGState(context);
+    }
     
     [strokeColor setStroke];
     lightFramePath.lineWidth = 1.f/scale;
     [lightFramePath stroke];
     
     //// Glow Drawing
-    
     CGFloat endRadius = self.lightState * MAX(floorf(width/2.f), floorf(height/2.f));
 
-    if (self.lightState > 0.f) {
+    if (self.lightState > lightRectRatio) {
         //// Gradient Declarations
+        UIColor* lightGlowColor = [self.glowColor colorWithAlphaComponent:0.2*self.lightState];
         CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
         NSArray* lightGlowGradientColors = [NSArray arrayWithObjects:
                                             (id)lightGlowColor.CGColor,
                                             (id)clearColor.CGColor, nil];
-        CGFloat lightGlowGradientLocations[] = {0.f, 1.f};
+        CGFloat lightGlowGradientLocations[] = {lightRectRatio, 1.f};
         CGGradientRef lightGlowGradient = CGGradientCreateWithColors(colorSpace, (__bridge CFArrayRef)lightGlowGradientColors, lightGlowGradientLocations);
         CGContextDrawRadialGradient(context, lightGlowGradient,
                                     CGPointMake(width/2.f, height/2.f - (1 - 1/scale)), 0.f,
