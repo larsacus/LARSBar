@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'LARSBar'
-  s.version      = '1.0.0'
+  s.version      = '1.1.0'
   s.summary      = 'An oddly-named UISlider subclass which mimics the EQ slider found on Twitter\'s #music app.'
   s.homepage     = 'https://github.com/larsacus/LARSBar'
   s.author = {
