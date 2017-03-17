@@ -8,7 +8,7 @@ You'll need to bring your own assets for the frame, track and slider thumb, or j
 Excuse the crummy gif screen capture quality, the performance is quite good and there are no gaps in the animation:  
 ![LARSBar in action](Demo/Assets/toleqdemo.gif)
 
-##Interface
+## Interface
 Pretty simple interface:
 
 ``` lang:objective-c
