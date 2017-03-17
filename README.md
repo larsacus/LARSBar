@@ -39,19 +39,14 @@ Pretty simple interface:
 
 In addition to all of the above, since this is just a `UISlider` subclass, you can treat it just like you would a normal `UISlider` (Using `UIAppearance`, etc).
 
-##License
+## License
 MIT License. Go nuts.
 
-##Homepage
+## Homepage
 If you're not on github right now reading this, you can find the page here: https://github.com/larsacus/LARSBar
 
-##Other
+## Other
 Demo project uses [Novocaine](https://github.com/alexbw/novocaine) for audio input. Other than that - have fun.
 
-Yours truly,
-
-_Lars_ ([@theonlylars](http://twitter.com/theonlylars))
-
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/larsacus/larsbar/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+by _Lars_ ([@theonlylars](http://twitter.com/theonlylars))
 
